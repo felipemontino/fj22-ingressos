@@ -3,6 +3,7 @@ package br.com.caelum.ingresso.model;
 import javax.persistence.*;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -41,7 +42,7 @@ public class Sala {
     }
 
     public BigDecimal getPreco() {
-		return preco;
+    	return	preco.setScale(2,	RoundingMode.HALF_UP);
 	}
 
 	public void setPreco(BigDecimal preco) {
